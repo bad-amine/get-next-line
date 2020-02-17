@@ -6,7 +6,7 @@
 /*   By: abadidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 16:19:19 by abadidi           #+#    #+#             */
-/*   Updated: 2020/02/16 16:19:34 by abadidi          ###   ########.fr       */
+/*   Updated: 2020/02/17 23:08:51 by abadidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
     int i
     int j;
+
     i = -1;
     j = 0;
-
 	dest = NULL;
 	len = 0;
 	if (!s1 || !s2)
