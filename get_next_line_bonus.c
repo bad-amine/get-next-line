@@ -6,10 +6,9 @@
 /*   By: abadidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 16:18:58 by abadidi           #+#    #+#             */
-/*   Updated: 2020/02/17 22:19:58 by abadidi          ###   ########.fr       */
+/*   Updated: 2020/02/17 22:58:25 by abadidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 char	*ft_strcpy(char *dest, const char *src)
 {
@@ -32,8 +31,8 @@ char	*ft_strcpy(char *dest, const char *src)
 
 char	*ft_strdup(const char *src)
 {
-	char *dest;
-	char *s;
+	char	*dest;
+	char	*s;
 
 	dest = NULL;
 	s = (char *)src;
@@ -45,29 +44,30 @@ char	*ft_strdup(const char *src)
 
 int		help1(int fd, char **rest)
 {
-	char *tmp;
-	int ret;
-	char BUFFER[BUFFER_SIZE + 1];
+	char	*tmp;
+	int		ret;
+	char	buffer[BUFFER_SIZE + 1];
+
 	while (!ft_strchr(*rest, '\n'))
 	{
-		ret = read(fd, BUFFER, BUFFER_SIZE);
+		ret = read(fd, buffer, BUFFER_SIZE);
 		if (ret < 0)
 			return (-1);
-		BUFFER[ret] = '\0';
+		buffer[ret] = '\0';
 		tmp = *rest;
-		*rest = ft_strjoin(*rest, BUFFER);
+		*rest = ft_strjoin(*rest, buffer);
 		free(tmp);
 		if (ret == 0)
-			break;
+			break ;
 	}
 	return (1);
 }
 
 int		help2(char **line, char **rest)
 {
-	char *tmp;
-	int len;
-	char *f;
+	char	*tmp;
+	int		len;
+	char	*f;
 
 	if (ft_strchr(*rest, '\n'))
 	{
@@ -92,8 +92,9 @@ int		help2(char **line, char **rest)
 int		get_next_line(int fd, char **line)
 {
 	static char *rest[1024];
+
 	if (!rest[fd])
 		rest[fd] = ft_strdup("");
 	help1(fd, &rest);
-	return help2(line, &rest[fd]);
+	return (help2(line, &rest[fd]));
 }
