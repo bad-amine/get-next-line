@@ -6,10 +6,11 @@
 /*   By: abadidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 16:18:58 by abadidi           #+#    #+#             */
-/*   Updated: 2020/02/17 22:58:25 by abadidi          ###   ########.fr       */
+/*   Updated: 2020/02/17 23:52:44 by abadidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include <string.h>
 char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t	i;
@@ -95,6 +96,6 @@ int		get_next_line(int fd, char **line)
 
 	if (!rest[fd])
 		rest[fd] = ft_strdup("");
-	help1(fd, &rest);
+	help1(fd, &rest[fd]);
 	return (help2(line, &rest[fd]));
 }
