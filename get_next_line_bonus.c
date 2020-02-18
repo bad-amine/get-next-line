@@ -6,11 +6,13 @@
 /*   By: abadidi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 16:18:58 by abadidi           #+#    #+#             */
-/*   Updated: 2020/02/17 23:52:44 by abadidi          ###   ########.fr       */
+/*   Updated: 2020/02/18 23:03:51 by abadidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <string.h>
+#include <string.h>
+#include "get_next_line.h"
+
 char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t	i;
